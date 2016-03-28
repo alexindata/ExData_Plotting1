@@ -7,6 +7,7 @@ dir("./webData")
 
 ## data download time stamp
 Sys.time()
+## [1] "2016-03-27
 
 ## estimate file size in MB (file contains 2,075,259 rows and 9 columns)
 file.size("./webData/household_power_consumption.txt")
@@ -19,8 +20,8 @@ pwrData$datetime <- paste(pwrData$Date, pwrData$Time, sep=" ")
 pwrData$datetime <- dmy_hms(pwrData$datetime)
 
 ## subset data according to time period
-start <- ymd_hms("2007-02-01 00:00:00") ## works
-end <- ymd_hms("2007-02-02 23:59:59") ## works
+start <- ymd_hms("2007-02-01 00:00:00")
+end <- ymd_hms("2007-02-02 23:59:59")
 pwr <- pwrData[(pwrData$datetime >= start & pwrData$datetime <= end), ]
 
 ## plot 4
